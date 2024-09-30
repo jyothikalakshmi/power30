@@ -19,4 +19,19 @@ document.addEventListener("scroll", function() {
       }
     });
   });
+  window.location.href = "index.html";
+
+  window.onload = function() {
+    // Redirect to the home page on load
+    window.location.href = "home";
+};
+
+  // Automatically enter the site after a few seconds (e.g., 3 seconds)
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById('intro-page').style.display = 'none';
+    document.getElementById('main-content').classList.remove('hidden');
+  }, 4000); // 1000 milliseconds = 1 seconds
+};
+
   
