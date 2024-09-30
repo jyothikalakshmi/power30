@@ -33,5 +33,25 @@ window.onload = function() {
     document.getElementById('main-content').classList.remove('hidden');
   }, 4000); // 1000 milliseconds = 1 seconds
 };
+// Add hover effect if you want more advanced animations
+document.querySelectorAll('.timeline-stage').forEach(stage => {
+  stage.addEventListener('mouseover', function() {
+      this.querySelector('.hidden-text').style.display = 'block';
+  });
 
-  
+  stage.addEventListener('mouseout', function() {
+      this.querySelector('.hidden-text').style.display = 'none';
+  });
+});
+window.onload = function() {
+  setTimeout(function() {
+    // Hide the intro page
+    document.getElementById('intro-page').style.display = 'none';
+    
+    // Show the main content
+    document.getElementById('main-content').classList.remove('hidden');
+    
+    // Show the navbar
+    document.querySelector('.navbar').style.display = 'block';
+  }, 4000); // Time in milliseconds to wait before removing intro page
+};
