@@ -104,12 +104,19 @@
   /* Button Styles */
   .btn {
     background-color: teal;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:250px;
+    height:50px;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
+    text-align: center;
     border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    margin:0 auto;
   }
   
   .btn:hover {
@@ -369,10 +376,10 @@
   
 .flip-card-container {
   display: flex;
-  justify-content: center;
+  justify-content:space-around;
   flex-wrap: wrap;
   gap:20px;
-  /* align-content: flex-start; */
+  align-content: flex-start;
   /* max-width: 1000px; */
   margin:0 auto;
 }
@@ -433,4 +440,22 @@ h1{
   text-align:center;
   margin-bottom: 50px;
   font-size: 60px;
+}
+.poster{
+  height:800px;
+  width:480px;
+  /* margin-left:-90%; */
+}
+.join-text{
+  width:50%;
+  padding:20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.content4{
+  display:flex;
+  flex-direction:row;
+  gap:150px;
 }
