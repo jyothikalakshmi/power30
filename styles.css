@@ -92,10 +92,49 @@
   .join-section {
     background-color: white;
   }
-  .contact-section
-  {
-    background-color: white;
+  /* Contact Us Section - Horizontal Width Reduced */
+.contact-section {
+  background-color: white;
+  width: 50vw; /* Set the width to 50% of the viewport horizontally */
+  margin: 0 auto; /* Center horizontally */
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex; /* Flexbox to center content */
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust height to fit content */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  .contact-section {
+    width: 75vw; /* Adjust width for medium screens */
   }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    width: 90vw; /* Further adjust width for small screens */
+  }
+}
+
+/* Navbar Link to Contact Section */
+.nav-tabs a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+/* Scroll effect for linking the navbar */
+.nav-tabs a[href*="#"] {
+  cursor: pointer;
+}
+
+
 
   .Overview-section{
     background-color: rgb(49, 185, 185);
@@ -367,70 +406,108 @@
   }
   }
   
-.flip-card-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap:20px;
-  /* align-content: flex-start; */
-  /* max-width: 1000px; */
-  margin:0 auto;
-}
-
-.flip-card {
-  background-color: tranparent;
-  width: 400px;
-  height: 280px;
-  perspective: 1000px;
-  margin: 20px 20px;
-  box-sizing: border-box;
-  margin-left:20px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
-  border:2px solid black;
-  box-shadow: 15px 0 30px rgba(0, 0, 0, 0.2), -15px 0 30px rgba(0, 0, 0, 0.2);
-}
-
-.flip-card-front {
-  background-color:teal; /* Light background */
-  color: rgb(229, 211, 211); /* Dark text */
-  font-size: xx-large;
-}
-
-.flip-card-back {
-  background-color: #ebf1f7; /* Dark background */
-  color: black;
-  transform: rotateY(180deg);
-  font-size: 18.5px;
-  justify-content:inherit;
-}
-
+  .flip-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid layout */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-items:center; /* Center the cards in the container */
+    justify-content: space-around;
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 100%; /* Make card width responsive */
+    max-width: 400px; /* Maximum card width */
+    height: auto;
+    perspective: 1000px;
+    box-sizing: border-box;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 70%; /* Aspect ratio to maintain height dynamically */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.2), -15px 0 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .flip-card-front {
+    background-color: teal; /* Light background */
+    color: rgb(229, 211, 211); /* Dark text */
+    font-size: xx-large;
+  }
+  
+  .flip-card-back {
+    background-color: #ebf1f7; /* Dark background */
+    color: black;
+    transform: rotateY(180deg);
+    font-size: 15px;
+    justify-content: center;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 60px;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 40px;
+    }
+  
+    .flip-card-front, .flip-card-back {
+      padding: 15px;
+    }
+  
+    .flip-card-front {
+      font-size: large;
+    }
+  
+    .flip-card-back {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 30px;
+    }
+  
+    .flip-card-front {
+      font-size: medium;
+    }
+  
+    .flip-card-back {
+      font-size: 14px;
+    }
+  }
+  
 h1{
   text-align:center;
   margin-bottom: 50px;
   font-size: 60px;
-}
+} 
