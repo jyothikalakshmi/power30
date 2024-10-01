@@ -93,41 +93,10 @@
     background-color: white;
   }
   /* Contact Us Section - Horizontal Width Reduced */
-.contact-section {
-  background-color: white;
-  width: 50vw; /* Set the width to 50% of the viewport horizontally */
-  margin: 0 auto; /* Center horizontally */
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  display: flex; /* Flexbox to center content */
-  justify-content: center;
-  align-items: center;
-  height: auto; /* Adjust height to fit content */
-}
-
-/* Responsive adjustment for smaller screens */
-@media (max-width: 768px) {
-  .contact-section {
-    width: 75vw; /* Adjust width for medium screens */
+  .contact-section
+  {
+    background-color: white;
   }
-}
-
-@media (max-width: 480px) {
-  .contact-section {
-    width: 90vw; /* Further adjust width for small screens */
-  }
-}
-
-/* Navbar Link to Contact Section */
-.nav-tabs a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 10px;
-  transition: background-color 0.3s ease;
-}
 
 /* Scroll effect for linking the navbar */
 .nav-tabs a[href*="#"] {
@@ -143,12 +112,19 @@
   /* Button Styles */
   .btn {
     background-color: teal;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:250px;
+    height:50px;
     color: white;
     padding: 10px 20px;
     text-decoration: none;
+    text-align: center;
     border-radius: 5px;
     font-size: 1rem;
     transition: background-color 0.3s ease;
+    margin:0 auto;
   }
   
   .btn:hover {
@@ -412,8 +388,7 @@
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;
-    justify-items:center; /* Center the cards in the container */
-    justify-content: space-around;
+    justify-items: center; /* Center the cards in the container */
   }
   
   .flip-card {
@@ -464,7 +439,7 @@
     color: black;
     transform: rotateY(180deg);
     font-size: 15px;
-    justify-content: center;
+    justify-content: inherit;
   }
   
   h1 {
@@ -506,8 +481,35 @@
     }
   }
   
-h1{
-  text-align:center;
-  margin-bottom: 50px;
-  font-size: 60px;
-} 
+.poster{
+  height:670px;
+  width:480px;
+  /* margin-left:-90%; */
+}
+/* Media queries for different device sizes */
+@media (min-width: 768px) {
+  .poster {
+    height: 100vh; /* Full height on medium and larger devices */
+    width: auto; /* Let width be automatic to maintain aspect ratio */
+  }
+}
+
+@media (min-width: 1024px) {
+  .poster {
+    height: 90vh; /* Slightly smaller height for larger devices */
+    max-width: 480px; /* Keep the max width constraint */
+  }
+}
+.join-text{
+  width:50%;
+  padding:20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.content4{
+  display:flex;
+  flex-direction:row;
+  gap:150px;
+}
