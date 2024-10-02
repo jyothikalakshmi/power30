@@ -77,6 +77,9 @@
   
   .home-section {
     background-color: white;
+    margin: 0;
+  height: 100vh;
+  background-color: #00001C; /* Background color */
   }
 
   .about-section {
@@ -512,4 +515,60 @@
   display:flex;
   flex-direction:row;
   gap:150px;
+}
+
+#dodecahedron-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 730px;   /* Set size */
+  height: 730px;  /* Set size */
+  z-index: 10;     /* Keep on top of other elements */
+  overflow: hidden; /* Hide overflow */
+}
+
+
+.title {
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  justify-content: flex-start; /* Align to the left side of the page */
+  align-items: center; /* Center vertically */
+ 
+}
+
+.firstletter, .lastletters, .thirty {
+  display: inline-block;
+}
+
+
+
+.firstletter {
+  font-size: 240px; /* Larger font for first letter */
+  color: #ffffff;
+}
+
+.lastletters {
+  font-size: 140px; /* Smaller font for last letters */
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+.thirty {
+  font-size: 240px; /* Larger font for "30" */
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+
+.title-tagline{
+  font-size: 40px;
+  color: #ffffff;
+  top: 40%;
+  left: 80px;
+  opacity: 0;
+  animation: slideIn 2s forwards;
+  animation-delay: 1s; /* Delayed start */
+  margin: 0 15px; /* Space between words */
+  white-space: nowrap;
 }
