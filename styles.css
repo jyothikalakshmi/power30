@@ -82,6 +82,11 @@
   .about-section {
     background-color: teal;
     color: white;
+    justify-content:flex-start;
+    text-align: justify;
+    font-size: 18px;
+    font-style:normal;
+    
   }
   
   .whatwedo-section {
@@ -95,7 +100,8 @@
   /* Contact Us Section - Horizontal Width Reduced */
   .contact-section
   {
-    background-color: white;
+    background-color: teal;
+    height: 300px;
   }
 
 /* Scroll effect for linking the navbar */
@@ -482,7 +488,7 @@
   }
   
 .poster{
-  height:670px;
+  height:600px;
   width:480px;
   /* margin-left:-90%; */
 }
@@ -512,4 +518,174 @@
   display:flex;
   flex-direction:row;
   gap:150px;
+}
+/* Us section styling */
+.about-section {
+  display: flex;
+  justify-content: flex-start;  /* Align content to the left */
+  padding: 20px;
+  
+}
+
+.about-container {
+  width: 100%; /* Ensure the container takes full width */
+  max-width: 100%; /* ResAboutponsive - takes full width of parent */
+  color: white;
+  text-align: left; /* Ensure text is aligned to the left */
+  padding: 10px; /* Padding for mobile devices */
+}
+
+ .question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  flex-wrap: wrap; /* Allows better wrapping on smaller screens */
+}
+.question:hover {
+  background-color:rgb(2, 47, 47); /* Color on hover */
+  color: white; /* Text color on hover */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Adds a slight shadow on hover */
+  transform: scale(1.02); /* Slightly increases the size of the question */
+}
+
+.dropdown-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+  transform: rotate(180deg);  /* Initially rotate the arrow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.question-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  word-wrap: break-word; /* Ensures long text doesn't overflow */
+}
+
+.answer {
+  font-size: 1rem;
+  display: none;
+  margin-bottom: 15px;
+  padding-left: 10px; /* Less padding for smaller screens */
+} 
+/* Styling for Questions */
+
+
+.open + .answer {
+  display: block; /* Display answer when the question is clicked */
+}
+
+
+.hidden {
+  display: none;  /* Ensures the answer is hidden */
+}
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Space between icons */
+}
+
+.contact-link {
+  font-size: 40px;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: #007BFF; /* Change color on hover */
+  transform: scale(1.1); /* Slightly increase icon size on hover */
+}
+
+/* Instagram Icon */
+.fab.fa-instagram {
+  color: #C13584; /* Instagram's brand color */
+}
+
+/* Email Icon */
+.fas.fa-envelope {
+  color: rgb(246, 239, 239); /* Default email icon color */
+}
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  #about {
+      width: 90%; /* Reduce width on smaller screens */
+  }
+
+  .about-container {
+      padding: 15px;
+  }
+
+  #about h2 {
+      font-size: 32px; /* Adjust title size */
+  }
+
+  #about p {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+      width: 95%; /* Further reduce width for tablets */
+      padding: 30px;
+  }
+
+  .about-container {
+      padding: 10px;
+  }
+
+  #about h2 {
+      font-size: 28px; /* Adjust title size */
+  }
+
+  #about p {
+      font-size: 14px;
+  }
+
+  .contact-link {
+      font-size: 30px; /* Reduce icon size on smaller screens */
+  }
+
+  .contact-icons {
+      gap: 20px; /* Adjust space between icons */
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+      width: 100%; /* Full width for mobile */
+      padding: 20px;
+  }
+
+  .about-container {
+      padding: 10px;
+  }
+
+  #about h2 {
+      font-size: 24px; /* Adjust title size */
+  }
+
+  #about p {
+      font-size: 13px;
+  }
+
+  .contact-link {
+      font-size: 25px; /* Further reduce icon size on mobile */
+  }
+
+  .contact-icons {
+      gap: 15px; /* Further adjust space between icons */
+  }
 }

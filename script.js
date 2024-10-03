@@ -18,3 +18,24 @@ window.onload = function() {
 
 };
 
+// document.addEventListener('DOMContentLoaded', function() {
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach((question) => {
+      question.addEventListener('click', function() {
+          // Toggle the open class on the question for rotating the arrow
+          this.classList.toggle('open');
+
+          // Find the next element sibling, which is the answer
+          const answer = this.nextElementSibling;
+          if (answer.classList.contains('hidden')) {
+              answer.classList.remove('hidden');
+              answer.style.display = 'block';
+          } else {
+              answer.classList.add('hidden');
+              answer.style.display = 'none';
+          }
+      });
+  });
+  
+
