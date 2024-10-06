@@ -93,7 +93,7 @@
   }
   
   .whatwedo-section {
-    background-color: rgb(17, 75, 75);
+    background-color: #00001C;
     color: white;
   }
   
@@ -115,8 +115,8 @@
 
 
   .Overview-section{
-    background-color: rgb(49, 185, 185);
-    color: black;
+    background-color:teal;
+    color: white;
   }
   /* Button Styles */
   .btn {
@@ -239,10 +239,10 @@
   }
 }
 /* Timeline Styles */
-.timeline {
+/* .timeline {
   position: relative;
   max-width: 800px;
-  margin: 0 auto; /* Center the timeline */
+  margin: 0 auto;
 }
 
 .timeline-stage {
@@ -260,10 +260,10 @@
 
 .timeline-stage:nth-child(even) {
   justify-content: flex-start;
-}
+} */
 
 /* Center the timeline-icon on the vertical line */
-.timeline-icon {
+/* .timeline-icon {
   width: 50px;
   height: 50px;
   background-color: teal;
@@ -274,17 +274,17 @@
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  position: absolute; /* Allow the icon to be positioned absolutely */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Ensure it is exactly centered on the line */
-  z-index: 1; /* Ensure the icon stays on top */
-}
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 1; Ensure the icon stays on top */
+/* }
 .timeline-content {
   background-color: rgba(0, 128, 128, 0.2);
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  width: 45%; /* Adjust the width of the content */
+  width: 45%; 
   transition: transform 0.5s ease;
 }
 
@@ -306,10 +306,10 @@
 
 .timeline-stage:hover .timeline-content p {
   display: block;
-}
+} */
 
 /* Timeline vertical line */
-.timeline::before {
+/* .timeline::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -346,7 +346,7 @@
 }
 
 /* Style for the first and last points to avoid extending lines */
-.timeline-stage:first-child::before {
+/* .timeline-stage:first-child::before {
   top: 50%;
 }
 
@@ -357,10 +357,10 @@
 .timeline-stage:hover::before {
   
  background-color: rgb(1, 58, 58);
-}
+} */ 
 
   /* Responsive Styles */
-  @media (max-width: 768px) {
+  /* @media (max-width: 768px) {
     .navbar .container {
       flex-direction: column;
     }
@@ -378,7 +378,7 @@
       padding: 1rem;
     }
      .timeline::before {
-    left: 20px; /* Adjust line position for smaller screens */
+    left: 20px; 
   }
 
   .timeline-content {
@@ -389,7 +389,7 @@
   .timeline-item {
     justify-content: flex-start;
   }
-  }
+  } */
   
   .flip-card-container {
     display: grid;
@@ -747,4 +747,160 @@
   .contact-icons {
       gap: 15px; /* Further adjust space between icons */
   }
+}
+
+
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-4 {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-4::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: #bbb;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-4 {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-4::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: #bbb;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left-4 {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right-4 {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-4::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid rgba(37, 117, 252, 1);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgba(37, 117, 252, 1);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-4::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid rgba(245, 87, 108, 1);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(245, 87, 108, 1) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-4::after {
+  left: -14px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline-4::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-4 {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-4::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left-4::after,
+  .right-4::after {
+    left: 18px;
+  }
+
+  .left-4::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right-4 {
+    left: 0%;
+  }
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  /* background: #6a11cb; */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  ); */
+  /* background: linear-gradient(135deg, #1c1c6b, #4c6ef5); */
+ 
+  background: linear-gradient(135deg, #4c6ef5, #00a0b0);
+  height:180px;
+font-size: 18px;
+
+
+}
+
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #f093fb;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(
+    to left,
+    rgba(240, 147, 251, 1),
+    rgba(245, 87, 108, 1)
+  ); */
+  /* background: linear-gradient(135deg, #ff6ec7, #ff9671); */
+
+  /* background: linear-gradient(135deg, #004e92, #00a0b0); */
+ 
+  background: linear-gradient(135deg, #ff6ec7, #ff9671);
+  height:180px;
+  font-size: 18px;
+
+
 }
