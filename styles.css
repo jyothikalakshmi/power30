@@ -4,15 +4,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    
   }
   
   body {
     scroll-behavior: smooth;
+    background-color: #00001C;
   }
   
   /* Navbar Styles */
   .navbar {
-    background-color: teal;
+    /* background-color: teal; */
+    background-color: #00001C;
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -83,7 +86,8 @@
   }
 
   .about-section {
-    background-color: teal;
+    /* background-color: teal; */
+    background-color: #00001C;
     color: white;
     justify-content:flex-start;
     text-align: justify;
@@ -93,18 +97,24 @@
   }
   
   .whatwedo-section {
-    background-color: rgb(17, 75, 75);
+    /* background-color: rgb(17, 75, 75); */
+    background-color: #00001C;
     color: white;
   }
   
   .join-section {
-    background-color: white;
+    /* background-color: white; */
+    background-color: #00001C;
+    color: white;
   }
   /* Contact Us Section - Horizontal Width Reduced */
   .contact-section
   {
-    background-color: teal;
+    /* background-color: teal; */
+    background-color: #00001C;
     height: 300px;
+    color:white;
+    justify-content: left;
   }
 
 /* Scroll effect for linking the navbar */
@@ -115,8 +125,9 @@
 
 
   .Overview-section{
-    background-color: rgb(49, 185, 185);
-    color: black;
+    /* background-color: rgb(49, 185, 185); */
+    color: white;
+    background-color:teal ;
   }
   /* Button Styles */
   .btn {
@@ -145,7 +156,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    background-color: teal;
+    background-color: #00001C;
     color: white;
     display: flex;
     justify-content: center;
@@ -246,13 +257,22 @@
 }
 
 .timeline-stage {
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
   align-items: center;
+  
+  position: relative;
+  width: 100%; */
   margin-bottom: 50px;
   position: relative;
-  width: 100%;
+    width: 300%; /* Makes the timeline stages longer */
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.3s;
 }
+
 
 .timeline-stage:nth-child(odd) {
   justify-content: flex-end;
@@ -264,11 +284,11 @@
 
 /* Center the timeline-icon on the vertical line */
 .timeline-icon {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   background-color: teal;
   color: white;
-  border-radius: 50%;
+  border-radius: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -330,11 +350,11 @@
 }
 
 .timeline-stage:nth-child(odd) .timeline-content {
-  margin-right: 10px;
+  margin-right:100px;
 }
 
 .timeline-stage:nth-child(even) .timeline-content {
-  margin-left: 10px;
+  margin-left: -180px;
 }
 
 .timeline-stage:nth-child(odd)::before {
@@ -356,40 +376,10 @@
 
 .timeline-stage:hover::before {
   
- background-color: rgb(1, 58, 58);
+ background-color: rgb(1, 58, 58);
 }
 
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .navbar .container {
-      flex-direction: column;
-    }
-  
-    .nav-tabs {
-      flex-direction: column;
-      margin-top: 1rem;
-    }
-  
-    .nav-tabs li {
-      margin: 10px 0;
-    }
-  
-    .section {
-      padding: 1rem;
-    }
-     .timeline::before {
-    left: 20px; /* Adjust line position for smaller screens */
-  }
-
-  .timeline-content {
-    width: 90%;
-    left: 0 !important;
-  }
-
-  .timeline-item {
-    justify-content: flex-start;
-  }
-  }
+ 
   
   .flip-card-container {
     display: grid;
@@ -527,8 +517,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 730px;   /* Set size */
-  height: 730px;  /* Set size */
+  width: 600px;   /* Set size */
+  height: 600px;  /* Set size */
   z-index: 10;     /* Keep on top of other elements */
   overflow: hidden; /* Hide overflow */
 }
@@ -550,18 +540,18 @@
 
 
 .firstletter {
-  font-size: 240px; /* Larger font for first letter */
+  font-size: 215px; /* Larger font for first letter */
   color: #ffffff;
 }
 
 .lastletters {
-  font-size: 140px; /* Smaller font for last letters */
+  font-size: 115px; /* Smaller font for last letters */
   color: #ffffff;
   margin-left: 5px;
 }
 
 .thirty {
-  font-size: 240px; /* Larger font for "30" */
+  font-size: 175px; /* Larger font for "30" */
   color: #ffffff;
   margin-left: 5px;
 }

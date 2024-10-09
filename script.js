@@ -33,7 +33,7 @@ window.onload = function() {
 
     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(1000, 1000); // Set size for larger view
+    renderer.setSize(800, 800); // Set size for larger view
     dodecahedronContainer.appendChild(renderer.domElement);
 
     // Dodecahedron geometry and material
