@@ -4,6 +4,912 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    scroll-behavior: smooth;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    background-color: teal;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: none; /* Hide the navbar initially */
+    }
+    
+  
+  
+  .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-tabs {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-tabs li {
+    margin-left: 20px;
+  }
+  
+  .nav-tabs a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-tabs a:hover {
+    background-color: rgb(2, 52, 52);
+    border-radius: 5px;
+  }
+  
+  /* Section Styles */
+  .section {
+    height: 100vh;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  h2 {
+    margin: 0;
+    padding: 1rem 0;  /* Add padding for spacing if necessary */
+  }
+  
+  
+  .home-section {
+    background-color: white;
+    margin: 0;
+  height: 100vh;
+  background-color: #00001C; /* Background color */
+  }
+
+  .about-section {
+    background-color: teal;
+    color: white;
+    justify-content:flex-start;
+    text-align: justify;
+    font-size: 18px;
+    font-style:normal;
+    
+  }
+  
+  .whatwedo-section {
+    background-color: #00001C;
+    color: white;
+  }
+  
+  .join-section {
+    background-color: white;
+  }
+  /* Contact Us Section - Horizontal Width Reduced */
+  .contact-section
+  {
+    background-color: teal;
+    height: 300px;
+  }
+
+/* Scroll effect for linking the navbar */
+.nav-tabs a[href*="#"] {
+  cursor: pointer;
+}
+
+
+
+  .Overview-section{
+    background-color:teal;
+    color: white;
+  }
+  /* Button Styles */
+  .btn {
+    background-color: teal;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width:250px;
+    height:50px;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    margin:0 auto;
+  }
+  
+  .btn:hover {
+    background-color: orange;
+  }
+  .intro-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .intro-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Hide main content initially */
+  .hidden {
+    display: none;
+  }
+  /* Sliding Text Section */
+.sliding-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem; /* Increase size */
+  font-weight: bold;
+  color: white; /* White color for the words */
+  margin-top: 20px; /* Adjust margin as needed */
+}
+
+.sliding-text .word {
+  opacity: 0;
+  animation: slideIn 2s forwards;
+  animation-delay: 1s; /* Delayed start */
+  margin: 0 15px; /* Space between words */
+  white-space: nowrap;
+}
+
+.sliding-text .separator {
+  width: 2px;
+  height: 60px;
+  background-color: white; /* Vertical separator in white */
+  display: inline-block;
+  margin: 0 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+  animation-delay: 1s; /* Delayed start for the separator */
+}
+/* Logo Styles and Animation */
+.logo-animation {
+  width: 350px; /* Adjust size as needed */
+  opacity: 0;
+  animation: zoomIn 1s forwards ease-in-out;
+  margin-bottom: 20px; /* Space between logo and text */
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+/* Fade-in animation for separator */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Timeline Styles */
+/* .timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-stage {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.timeline-stage:nth-child(odd) {
+  justify-content: flex-end;
+}
+
+.timeline-stage:nth-child(even) {
+  justify-content: flex-start;
+} */
+
+/* Center the timeline-icon on the vertical line */
+/* .timeline-icon {
+  width: 50px;
+  height: 50px;
+  background-color: teal;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 1; Ensure the icon stays on top */
+/* }
+.timeline-content {
+  background-color: rgba(0, 128, 128, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 45%; 
+  transition: transform 0.5s ease;
+}
+
+.timeline-content h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.timeline-content p {
+  display: none;
+  font-size: 1rem;
+}
+
+.timeline-stage:hover .timeline-content {
+  background-color: teal;
+  color: white;
+  transform: scale(1.05);
+}
+
+.timeline-stage:hover .timeline-content p {
+  display: block;
+} */
+
+/* Timeline vertical line */
+/* .timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: rgb(126, 84, 5);
+  transform: translateX(-50%);
+}
+
+.timeline-stage::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  width: 3px;
+  background-color: rgb(126, 84, 5);
+}
+
+.timeline-stage:nth-child(odd) .timeline-content {
+  margin-right: 10px;
+}
+
+.timeline-stage:nth-child(even) .timeline-content {
+  margin-left: 10px;
+}
+
+.timeline-stage:nth-child(odd)::before {
+  right: calc(50% + 25px);
+}
+
+.timeline-stage:nth-child(even)::before {
+  left: calc(50% + 25px);
+}
+
+/* Style for the first and last points to avoid extending lines */
+/* .timeline-stage:first-child::before {
+  top: 50%;
+}
+
+.timeline-stage:last-child::before {
+  bottom: 50%;
+}
+
+.timeline-stage:hover::before {
+  
+ background-color: rgb(1, 58, 58);
+} */ 
+
+  /* Responsive Styles */
+  /* @media (max-width: 768px) {
+    .navbar .container {
+      flex-direction: column;
+    }
+  
+    .nav-tabs {
+      flex-direction: column;
+      margin-top: 1rem;
+    }
+  
+    .nav-tabs li {
+      margin: 10px 0;
+    }
+  
+    .section {
+      padding: 1rem;
+    }
+     .timeline::before {
+    left: 20px; 
+  }
+
+  .timeline-content {
+    width: 90%;
+    left: 0 !important;
+  }
+
+  .timeline-item {
+    justify-content: flex-start;
+  }
+  } */
+  
+  .flip-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grid layout */
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-items: center; /* Center the cards in the container */
+  }
+  
+  .flip-card {
+    background-color: transparent;
+    width: 100%; /* Make card width responsive */
+    max-width: 400px; /* Maximum card width */
+    height: auto;
+    perspective: 1000px;
+    box-sizing: border-box;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 70%; /* Aspect ratio to maintain height dynamically */
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    border: 2px solid black;
+    box-shadow: 15px 0 30px rgba(0, 0, 0, 0.2), -15px 0 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .flip-card-front {
+    background-color: teal; /* Light background */
+    color: rgb(229, 211, 211); /* Dark text */
+    font-size: xx-large;
+  }
+  
+  .flip-card-back {
+    background-color: #ebf1f7; /* Dark background */
+    color: black;
+    transform: rotateY(180deg);
+    font-size: 15px;
+    justify-content: inherit;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 60px;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 40px;
+    }
+  
+    .flip-card-front, .flip-card-back {
+      padding: 15px;
+    }
+  
+    .flip-card-front {
+      font-size: large;
+    }
+  
+    .flip-card-back {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 30px;
+    }
+  
+    .flip-card-front {
+      font-size: medium;
+    }
+  
+    .flip-card-back {
+      font-size: 14px;
+    }
+  }
+  
+.poster{
+  height:600px;
+  width:480px;
+  /* margin-left:-90%; */
+}
+/* Media queries for different device sizes */
+@media (min-width: 768px) {
+  .poster {
+    height: 100vh; /* Full height on medium and larger devices */
+    width: auto; /* Let width be automatic to maintain aspect ratio */
+  }
+}
+
+@media (min-width: 1024px) {
+  .poster {
+    height: 90vh; /* Slightly smaller height for larger devices */
+    max-width: 480px; /* Keep the max width constraint */
+  }
+}
+.join-text{
+  width:50%;
+  padding:20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.content4{
+  display:flex;
+  flex-direction:row;
+  gap:150px;
+}
+
+#dodecahedron-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 730px;   /* Set size */
+  height: 730px;  /* Set size */
+  z-index: 10;     /* Keep on top of other elements */
+  overflow: hidden; /* Hide overflow */
+}
+
+
+.title {
+  position: absolute;
+  top: 30%;
+  left: 50px;
+  justify-content: flex-start; /* Align to the left side of the page */
+  align-items: center; /* Center vertically */
+ 
+}
+
+.firstletter, .lastletters, .thirty {
+  display: inline-block;
+}
+
+
+
+.firstletter {
+  font-size: 240px; /* Larger font for first letter */
+  color: #ffffff;
+}
+
+.lastletters {
+  font-size: 140px; /* Smaller font for last letters */
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+.thirty {
+  font-size: 240px; /* Larger font for "30" */
+  color: #ffffff;
+  margin-left: 5px;
+}
+
+
+.title-tagline{
+  font-size: 40px;
+  color: #ffffff;
+  top: 40%;
+  left: 80px;
+  opacity: 0;
+  animation: slideIn 2s forwards;
+  animation-delay: 1s; /* Delayed start */
+  margin: 0 15px; /* Space between words */
+  white-space: nowrap;
+}
+/* Us section styling */
+.about-section {
+  display: flex;
+  justify-content: flex-start;  /* Align content to the left */
+  padding: 20px;
+  
+}
+
+.about-container {
+  width: 100%; /* Ensure the container takes full width */
+  max-width: 100%; /* ResAboutponsive - takes full width of parent */
+  color: white;
+  text-align: left; /* Ensure text is aligned to the left */
+  padding: 10px; /* Padding for mobile devices */
+}
+
+ .question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  flex-wrap: wrap; /* Allows better wrapping on smaller screens */
+}
+.question:hover {
+  background-color:rgb(2, 47, 47); /* Color on hover */
+  color: white; /* Text color on hover */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Adds a slight shadow on hover */
+  transform: scale(1.02); /* Slightly increases the size of the question */
+}
+
+.dropdown-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+  transform: rotate(180deg);  /* Initially rotate the arrow */
+  transition: transform 0.3s ease-in-out;
+}
+
+.question-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+  flex-grow: 1;
+  word-wrap: break-word; /* Ensures long text doesn't overflow */
+}
+
+.answer {
+  font-size: 1rem;
+  display: none;
+  margin-bottom: 15px;
+  padding-left: 10px; /* Less padding for smaller screens */
+} 
+/* Styling for Questions */
+
+
+.open + .answer {
+  display: block; /* Display answer when the question is clicked */
+}
+
+
+.hidden {
+  display: none;  /* Ensures the answer is hidden */
+}
+/* Contact Section */
+#contact {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* Space between icons */
+}
+
+.contact-link {
+  font-size: 40px;
+  color: #333;
+  transition: color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: #007BFF; /* Change color on hover */
+  transform: scale(1.1); /* Slightly increase icon size on hover */
+}
+
+/* Instagram Icon */
+.fab.fa-instagram {
+  color: #C13584; /* Instagram's brand color */
+}
+
+/* Email Icon */
+.fas.fa-envelope {
+  color: rgb(246, 239, 239); /* Default email icon color */
+}
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  #about {
+      width: 90%; /* Reduce width on smaller screens */
+  }
+
+  .about-container {
+      padding: 15px;
+  }
+
+  #about h2 {
+      font-size: 32px; /* Adjust title size */
+  }
+
+  #about p {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  #about {
+      width: 95%; /* Further reduce width for tablets */
+      padding: 30px;
+  }
+
+  .about-container {
+      padding: 10px;
+  }
+
+  #about h2 {
+      font-size: 28px; /* Adjust title size */
+  }
+
+  #about p {
+      font-size: 14px;
+  }
+
+  .contact-link {
+      font-size: 30px; /* Reduce icon size on smaller screens */
+  }
+
+  .contact-icons {
+      gap: 20px; /* Adjust space between icons */
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+      width: 100%; /* Full width for mobile */
+      padding: 20px;
+  }
+
+  .about-container {
+      padding: 10px;
+  }
+
+  #about h2 {
+      font-size: 24px; /* Adjust title size */
+  }
+
+  #about p {
+      font-size: 13px;
+  }
+
+  .contact-link {
+      font-size: 25px; /* Further reduce icon size on mobile */
+  }
+
+  .contact-icons {
+      gap: 15px; /* Further adjust space between icons */
+  }
+}
+
+
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-4 {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline-4::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  background-color: #bbb;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline-4 {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline-4::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -11px;
+  background-color: #bbb;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left-4 {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right-4 {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left-4::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid rgba(37, 117, 252, 1);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgba(37, 117, 252, 1);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right-4::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid rgba(245, 87, 108, 1);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(245, 87, 108, 1) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right-4::after {
+  left: -14px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline-4::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline-4 {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline-4::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left-4::after,
+  .right-4::after {
+    left: 18px;
+  }
+
+  .left-4::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right-4 {
+    left: 0%;
+  }
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  /* background: #6a11cb; */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  ); */
+  /* background: linear-gradient(135deg, #1c1c6b, #4c6ef5); */
+ 
+  background: linear-gradient(135deg, #4c6ef5, #00a0b0);
+  height:180px;
+font-size: 18px;
+
+
+}
+
+.gradient-custom-4 {
+  /* fallback for old browsers */
+  background: #f093fb;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background: linear-gradient(
+    to left,
+    rgba(240, 147, 251, 1),
+    rgba(245, 87, 108, 1)
+  ); */
+  /* background: linear-gradient(135deg, #ff6ec7, #ff9671); */
+
+  /* background: linear-gradient(135deg, #004e92, #00a0b0); */
+ 
+  background: linear-gradient(135deg, #ff6ec7, #ff9671);
+  height:180px;
+  font-size: 18px;
+
+
+}
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
     
   }
   
